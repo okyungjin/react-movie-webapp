@@ -1,10 +1,12 @@
 ## 🏷 &nbsp;Table of Contents
-
+- [🏷 &nbsp;Table of Contents](#-table-of-contents)
 - [🙌 &nbsp;About project](#-about-project)
 - [📕 &nbsp;Dev Notes](#-dev-notes)
+  - [✔️ &nbsp;HTML과 React의 소스 작성 방식에서의 차이](#️-html과-react의-소스-작성-방식에서의-차이)
   - [✔️ &nbsp;Why is React awesome?](#️-why-is-react-awesome)
 - [🔫 Troubleshooting](#-troubleshooting)
   - [✔️ &nbsp;TIL 3](#️-til-3)
+
 
 <br/><br/>
 
