@@ -3,6 +3,7 @@
 - [🙌 &nbsp;About project](#-about-project)
 - [📕 &nbsp;Dev Notes](#-dev-notes)
   - [✔️ &nbsp;HTML과 React의 소스 작성 방식에서의 차이](#️-html과-react의-소스-작성-방식에서의-차이)
+  - [✔️ &nbsp;React 컴포넌트 생성하기](#️-react-컴포넌트-생성하기)
   - [✔️ &nbsp;Why is React awesome?](#️-why-is-react-awesome)
 - [🔫 Troubleshooting](#-troubleshooting)
   - [✔️ &nbsp;TIL 3](#️-til-3)
@@ -55,6 +56,51 @@ HTML은 body에 tag를 작성하여 HTML Element를 생성하는 방식이고, R
     const root = document.getElementById('root');
     const coolSpan = React.createElement('span', { id: 'cool-span' }, "HI I'm cool span");
     ReactDOM.render(coolSpan, root);
+  </script>
+</html>
+```
+
+<br/>
+
+### ✔️ &nbsp;React 컴포넌트 생성하기
+
+> 아래 예시는 React 동작을 이해하기 위한 것이며, 실제로 사용 시에는 더 간단하게 컴포넌트를 정의할 수 있다.
+
+`React` 의 장점은 HTML에 마크업하지 않고 js로 컴포넌트를 생성할 수 있다는 점이다. 특히 `createElement` 를 통해 컴포넌트를 생성하면서 event handler를 등록할 수 있다.
+
+아래 예시에서는 `onMouseEnter` 와 `onClick` event handler를 등록하고 있다.
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script>
+    const root = document.getElementById('root');
+    const count = React.createElement(
+      'span',
+      {
+        id: 'count',
+        key: 'count',
+        onMouseEnter: () => console.log('mouse enter')
+      },
+      "HI I'm span"
+    );
+    
+    const btn = React.createElement(
+      'button',
+      {
+        key: 'btn',
+        onClick: () => console.log('im clicked')
+      },
+      'Click me'
+    );
+
+    const container = React.createElement('div', null, [span, btn]);
+    ReactDOM.render(container, root);
   </script>
 </html>
 ```
