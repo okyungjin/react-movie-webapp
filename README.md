@@ -3,8 +3,8 @@
 - [🙌 &nbsp;About project](#-about-project)
 - [📕 &nbsp;Dev Notes](#-dev-notes)
   - [✔️ &nbsp;HTML과 React의 소스 작성 방식에서의 차이](#️-html과-react의-소스-작성-방식에서의-차이)
+  - [✔️ &nbsp;HTML, JavaScript로 counter 구현하기](#️-html-javascript로-counter-구현하기)
   - [✔️ &nbsp;React 컴포넌트 생성하기](#️-react-컴포넌트-생성하기)
-  - [✔️ &nbsp;Why is React awesome?](#️-why-is-react-awesome)
 - [🔫 Troubleshooting](#-troubleshooting)
   - [✔️ &nbsp;TIL 3](#️-til-3)
 
@@ -62,6 +62,39 @@ HTML은 body에 tag를 작성하여 HTML Element를 생성하는 방식이고, R
 
 <br/>
 
+### ✔️ &nbsp;HTML, JavaScript로 counter 구현하기 
+
+> 새로운 기술은 불편함을 해소하기 위해 탄생한다.
+
+React는 기존 HTML + JS의 구현 방식의 불편함을 해소하기 위해 탄생했다. HTML과 JS로 counter를 구현하여 어떤 불편함이 있는지 살펴보자.
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <span id="count">Total clicks: 0</span>
+    <button id="count-up">Count Up</button>
+  </body>
+  <script>
+    const count = document.querySelector('#count');
+    const countUpBtn = document.querySelector('#count-up');
+
+    let counter = 0;
+    const handleClick = () => {
+      count.innerHTML = `Total clicks: ${++counter}`;
+    };
+
+    countUpBtn.addEventListener('click', handleClick);
+  </script>
+</html>
+```
+
+`querySelector` 로 DOM Element에 접근하고, `addEventListener` 메서드를 통해 element에 event를 연결해주는 방식이다.
+
+`countUpBtn` 버튼이 클릭되면 `counter` 를 1 증가시키고 그 값을 `counter.innerHTML` 에 set 해주는 방식이다. React에서는 interactive한 방식으로 이러한 동작을 처리할 수 있다.
+
+<br/>
+
 ### ✔️ &nbsp;React 컴포넌트 생성하기
 
 > 아래 예시는 React 동작을 이해하기 위한 것이며, 실제로 사용 시에는 더 간단하게 컴포넌트를 정의할 수 있다.
@@ -103,6 +136,10 @@ HTML은 body에 tag를 작성하여 HTML Element를 생성하는 방식이고, R
   </script>
 </html>
 ```
+
+<br/>
+
+
 
 
 
