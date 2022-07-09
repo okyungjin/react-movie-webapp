@@ -80,11 +80,10 @@ HTML은 body에 tag를 작성하여 HTML Element를 생성하는 방식이고, R
   <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
   <script>
     const root = document.getElementById('root');
-    const count = React.createElement(
+    const span = React.createElement(
       'span',
       {
-        id: 'count',
-        key: 'count',
+        key: 'span',
         onMouseEnter: () => console.log('mouse enter')
       },
       "HI I'm span"
